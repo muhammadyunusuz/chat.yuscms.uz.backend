@@ -2,7 +2,8 @@ const bcrypt = require('bcrypt')
 const SALT_SIZE = 10
 
 async function generateHash (data) {
-    return await bcrypt.hash(data, bcrypt.genSalt(SALT_SIZE))
+    console.log(data);
+    return await bcrypt.hash(data, await bcrypt.genSalt(SALT_SIZE))
 }
 
 async function compareHash (data, hash) {
